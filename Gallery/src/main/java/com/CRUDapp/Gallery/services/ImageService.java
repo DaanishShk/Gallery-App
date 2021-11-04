@@ -24,4 +24,20 @@ public class ImageService {
     public List<Image> getImagesByName(String name) {
         return imageRepository.findImageByImgName(name);
     }
+
+    public Image getImageById(Long id) {
+        return imageRepository.getById(id);
+    }
+
+    public void addImage(Image image) {
+        imageRepository.save(image);
+    }
+
+    public void editImage(Image imageOld, Image image) {
+
+    }
+
+    public void deleteImage(Long id){
+        imageRepository.deleteById(id);
+    }
 }
