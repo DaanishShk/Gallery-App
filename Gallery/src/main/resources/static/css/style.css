@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+/* --------------
+    General fixes
+   -------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* --------------
+    Typography
+   -------------- */
+
+
+body {
+  --link-color: rgb(88, 40, 0);
+}
+
+h2 {
+  color:rgb(102, 47, 2);
+  font-family: 'Architects Daughter', cursive;
+}
+
+h1 {
+    font-family:'Indie Flower', cursive;
+    font-size: 100px;
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: tomato;
+}
+
+header p {  
+    font-family:'Indie Flower', cursive;
+    font-size: 30px;
+    color: rgb(18, 80, 109);
+}
+
+button {
+    font-size: 18px;
+
+}
+
+footer p {
+    margin: 0;
+    padding: 10px;
+    color:rgb(2, 0, 0);
+    display: inline-block;
+}
+
+footer a {
+    font-family: cursive;
+}
+
+/* --------------
+    Layout
+   -------------- */
+
+body {
+    margin: auto;
+    max-width: 1200px;
+}
+
+/* nav, footer {
+    width: 100vw;
+} */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: sticky;
+  z-index: 10;
+  top: 0;
+}
+
+nav img {
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    top: 10px
+}
+
+nav h2 {
+  display: inline-block;
+  position: relative;
+  top: -5px;
+  margin: 0;
+  padding: 0 20px;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  margin-right: 3%;
+  padding: 0;
+}
+
+li a {
+    box-sizing: content-box;
+    display: inline-block;
+    line-height: 61px;
+    padding: 0 20px;
+}
+
+header {
+    height: calc(100vh - 50px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header h1 {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+header p {
+    max-width: 800px;
+    margin: 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.image-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  width: 350px;
+  overflow: hidden;
+}
+
+img,
+p {
+  display: block;
+}
+
+header img {
+    height: 50vh
+}
+
+main img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.navigation-buttons {
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 30px;
+}
+
+footer {
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 50px;
+}
+
+@media only screen and (min-width: 750px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ----------------
+     temp colors
+   ---------------- */
+
+nav {
+  background-color: #aed6dc;
+}
+
+header {
+  background-image: linear-gradient(35deg, #ff9a8d,rgba(109, 39, 39, 0.274));
+}
+
+main {
+  background-color: #4a536b;
+}
+
+footer {
+  background-color: #ff9a8d;
+}
+
+.image-link {
+   background-color: rgb(241, 227, 227);
+}
+
+/* ----------------
+     Element styles
+   ---------------- */
+
+nav {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.411);
+}
+
+nav a:hover {
+    transition-duration: 0.3s;
+    background-color: rgb(236, 190, 190);
+}
+
+.image-link {
+    border: 4px solid rgba(0, 0, 0, 0.671);
+    border-radius: 5px;
+}
+
+.image-link:hover {
+    transition-duration: 0.3s;
+    opacity: 0.75;
+}
+
+.image-link p {
+    padding: 0 10px;
+}
+
+button {
+    background-color: rgba(207, 128, 120, 0.897);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+button:hover {
+    transition-duration: 0.3s;
+    color:rgb(255, 255, 255);
+    cursor: pointer;
+}
