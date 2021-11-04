@@ -9,6 +9,7 @@ main img {
 
 .add-form {
     display: flex;
+    align-items: center;
     overflow: hidden;
 } 
 
@@ -20,6 +21,8 @@ form {
 
 .add-form img {
     width: calc(100% - 310px);
+    border: 1px solid black;
+    border-radius: 2px;
 }
 
 .input-container {
@@ -31,7 +34,13 @@ form {
 }
 
 input {
-    line-height: 25px;
-    border: hidden;
-    border-radius: 3px;
+    font-size: 13px;
 }
+
+textarea {
+    resize: none;
+    width: 167px;
+    border-radius: 3px;
+    border: none;
+}
+

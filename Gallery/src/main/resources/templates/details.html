@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/addImage.css">
     <link rel="stylesheet" href="../static/css/style.css" />
     <link
       rel="shortcut icon"
@@ -19,8 +20,7 @@
       <h2><img src="../static/images/gallery.png" alt="" /> Gallery App</h2>
       <ul>
         <li><a href="./index.html">Home</a></li>
-        <li><a href="">Add</a></li>
-        <li><a href="">Modify</a></li>
+        <li><a href="./addImage.html">Add</a></li>
       </ul>
     </nav>
 
@@ -42,8 +42,26 @@
       </div>
 
       <div class="navigation-buttons">
-        <button>Edit</button>
+        <button onclick="onClickEdit()">Edit</button>
         <button>Delete</button>
+      </div>
+
+      <div id="update-form">
+        <form action="">
+          <div class="input-container">
+              <label for="name"> Name</label>
+              <input type="text" name="name" id="name" required/>
+            </div>
+            <div class="input-container">
+              <label for="url"> URL</label>
+              <input type="url" name="url" id="url" required/>
+            </div>
+            <div class="input-container">
+              <label for="description"> Description</label>
+              <textarea name="description" id="description" cols="20" rows="5"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
       </div>
     </main>
     <footer>
@@ -68,5 +86,6 @@
         >
       </div>
     </footer>
+    <script src="../static/js/script.js"></script>
   </body>
 </html>

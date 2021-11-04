@@ -163,6 +163,13 @@ header p {
     margin: 0;
 }
 
+.search-bar {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -307,4 +314,15 @@ button:hover {
     border-left: none;
     border-right: none;
     margin-bottom: 10px;
+}
+
+form button {
+  padding: 3px 10px;
+}
+
+input {
+    line-height: 25px;
+    font-size: 20px;
+    border: hidden;
+    border-radius: 3px;
 }
