@@ -1,0 +1,37 @@
+
+/* 
+main img {
+    display: inline-block;
+    width: max-content;
+    height: max-content;
+    object-fit: none;
+} */
+
+.add-form {
+    display: flex;
+    overflow: hidden;
+} 
+
+form {
+    font-family: cursive;
+    padding: 20px;
+    width: 310px;
+}
+
+.add-form img {
+    width: calc(100% - 310px);
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+}
+
+input {
+    line-height: 25px;
+    border: hidden;
+    border-radius: 3px;
+}
