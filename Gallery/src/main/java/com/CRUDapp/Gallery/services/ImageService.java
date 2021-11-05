@@ -36,11 +36,11 @@ public class ImageService {
     }
 
     public Image getImageById(Long id) {
-        return imageRepository.findById(id).get();
+        return imageRepository.getById(id);
     }
 
-    public void addImage(Image image) {
-        imageRepository.save(image);
+    public Image addImage(Image image) {
+        return imageRepository.save(image);
     }
 
     public void editImage(Long id, String url, String description) {
