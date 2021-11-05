@@ -1,83 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://thymeleaf.org">
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css" />
     <link
-            rel="shortcut icon"
-            href="/images/favicon.ico"
-            type="image/x-icon"
+      rel="shortcut icon"
+      href="/images/favicon.ico"
+      type="image/x-icon"
     />
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <title>Gallery App</title>
-</head>
-<body>
-<nav>
-    <h2><img src="/images/gallery.png" alt="" /> Gallery App</h2>
-    <ul>
+    <link rel="stylesheet" href="/css/error.css">
+  </head>
+  <body>
+    <nav>
+      <h2><img src="/images/gallery.png" alt="" /> Gallery App</h2>
+      <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/new">Add</a></li>
-    </ul>
-</nav>
-<header>
-    <img src="/images/photo-gallery.png" alt="" />
-    <h1>Welcome!</h1>
-    <p>
-        This application allows you to view, add and modify images. <br />Scroll
-        down to start exploring
-    </p>
-    <span id="marker"></span>
-</header>
-<main id="main">
-    <div class="search-bar">
-        <form th:action="@{/search}" method="get">
-            <input type="search" id="search" name="query" />
-            <button type="submit">Search</button>
-        </form>
-    </div>
-    <div class="cards">
-        <a th:each="image : ${images}" th:href="@{'/show/' + ${image.id}}" class="image-link">
-            <div class="image-card">
-                <img
-                        th:src="${image.url}"
-                        th:alt="${image.description}"
-                />
-                <p th:text="${image.name}">Image Name</p>
-            </div>
-        </a>
-    </div>
-
-    <div id="navigation-buttons" class="navigation-buttons">
-        <button id="prev" th:value="${pageNo - 1}" onclick="onClickNavigation(this.value)">Prev &lt;</button>
-        <button id="next" th:value="${pageNo + 1}" onclick="onClickNavigation(this.value)">&gt; Next</button>
-        <p>Page <span th:text="${pageNo + 1}">Page no.</span></p>
-    </div>
-</main>
-<footer>
-    <div id="navigation" class="personal-info">
+      </ul>
+    </nav>
+    <header>
+      <img src="/images/error.png" alt="" />
+      <h1>OOPS.. something went wrong</h1>
+      
+    </header>
+    
+    <footer>
+      <div class="personal-info">
         <p>By Mohammad Daanish Shaikh</p>
         <a href="https://github.com/DaanishShk/Gallery-App" target="_blank">
-            <img src="/images/GitHub-Mark-120px-plus.png" alt="" />
-            GitHub</a
+          <img src="/images/GitHub-Mark-120px-plus.png" alt="" />
+          GitHub</a
         >
-    </div>
-    <div class="flaticon">
-        Icons made by
-        <a
-                href="https://www.flaticon.com/authors/fauzidea"
-                title="FauzIDEA"
-                target="_blank"
-        >FauzIDEA</a
-        >
-        from
-        <a href="https://www.flaticon.com/" title="Flaticon" target="_blank"
-        >www.flaticon.com</a
-        >
-    </div>
-</footer>
-<script src="/js/script.js"></script>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>

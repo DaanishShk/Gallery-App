@@ -206,7 +206,7 @@ main img {
 }
 
 footer {
-    height: 170px;
+    height: max-content;
 }
 
 .personal-info{
@@ -313,7 +313,6 @@ button:hover {
     border: 1px solid rgb(0, 0, 0);
     border-left: none;
     border-right: none;
-    margin-bottom: 10px;
 }
 
 form button {
