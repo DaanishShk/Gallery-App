@@ -4,7 +4,7 @@ spring:
     username: ${USER}
     password: ${PASSWORD}
   jpa:
-    .hibernate:
+    hibernate:
       ddl-auto: create-drop
     show-sql: true
     properties:
