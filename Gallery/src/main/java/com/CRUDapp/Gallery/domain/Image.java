@@ -13,8 +13,8 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 public class Image extends AbstractPersistable<Long> {
 
-    private String imgName;
-    private String imgURL;
-    private String imgDetails;
+    private String name;
+    private String url;
+    private String description;
 
 }

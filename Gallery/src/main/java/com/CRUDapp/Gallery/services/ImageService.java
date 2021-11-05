@@ -2,8 +2,8 @@ package com.CRUDapp.Gallery.services;
 
 import com.CRUDapp.Gallery.domain.Image;
 import com.CRUDapp.Gallery.domain.ImageRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -22,19 +22,22 @@ public class ImageService {
     }
 
     public List<Image> getImagesByName(String name) {
-        return imageRepository.findImageByImgName(name);
+        return imageRepository.findImageByName(name);
     }
 
     public Image getImageById(Long id) {
-        return imageRepository.getById(id);
+        return imageRepository.findById(id).get();
     }
 
     public void addImage(Image image) {
         imageRepository.save(image);
     }
 
-    public void editImage(Image imageOld, Image image) {
-
+    public void editImage(Long id, String url, String description) {
+        Image image = imageRepository.findById(id).get();
+        image.setUrl(url);
+        image.setDescription(description);
+        imageRepository.save(image);
     }
 
     public void deleteImage(Long id){

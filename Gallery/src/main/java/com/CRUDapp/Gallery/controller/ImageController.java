@@ -18,19 +18,20 @@ public class ImageController {
 
     @GetMapping("/")
     public String homePage(Model model) {
-        model.addAttribute(imageService.getAllImages());
+        model.addAttribute("images",imageService.getAllImages());
         return "index";
     }
 
     @GetMapping("/show/{id}")
     public String detailsPage(@PathVariable Long id, Model model) {
-        model.addAttribute(imageService.getImageById(id));
+        model.addAttribute("image",imageService.getImageById(id));
         return "details";
     }
 
     @GetMapping("/new")
-    public String addImagePage() {
-        return "addForm";
+    public String addImagePage(Model model) {
+        model.addAttribute("image", new Image());
+        return "addImage";
     }
 
     @PostMapping("/")
@@ -41,17 +42,17 @@ public class ImageController {
 
     @GetMapping("/{id}/edit")
     public String editImage(@PathVariable Long id, Model model) {
-        model.addAttribute(imageService.getImageById(id));
-        return "editForm";
+        model.addAttribute("image",imageService.getImageById(id));
+        return "editImage";
     }
 
-    @PutMapping("/{id}/edit")
-    public String putImage(@PathVariable Long id, @ModelAttribute Image image) {
-        imageService.editImage(imageService.getImageById(id), image);
+    @PostMapping("/{id}/edit")
+    public String putImage(@PathVariable Long id, @RequestBody String url, @RequestBody String description) {
+        imageService.editImage(id, url, description);
         return "redirect:/"+id+"/edit";
     }
 
-    @DeleteMapping("/delete/{id}")
+    @PostMapping("/delete/{id}")
     public String deleteImage(@PathVariable Long id) {
         imageService.deleteImage(id);
         return "redirect:/";

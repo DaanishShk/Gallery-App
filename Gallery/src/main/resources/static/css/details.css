@@ -12,25 +12,6 @@ main a {
   color: black;
 }
 
-#update-form {
-  display: none;
-  padding-bottom: 20px;
-}
-
 form {
-  background-color: rgba(238, 228, 227, 0.315);
-  border: 1px solid black;
-  border-radius: 2px;
-  width: 50%;
-  margin: auto;
-}
-
-input,
-textarea {
-  width: 60%;
-  font-size: 13px;
-}
-
-.input-container:first-of-type {
-  display: none;
+  display: inline-block;
 }

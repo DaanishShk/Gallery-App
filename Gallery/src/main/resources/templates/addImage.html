@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="shortcut icon"
-      href="../static/images/favicon.ico"
+      href="/images/favicon.ico"
       type="image/x-icon"
     />
-    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../static/css/addImage.css" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/css/addImage.css" />
     <title>Add image</title>
   </head>
   <body>
     <nav>
-      <h2><img src="../static/images/gallery.png" alt="" /> Gallery App</h2>
+      <h2><img src="/images/gallery.png" alt="" /> Gallery App</h2>
       <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./addImage.html">Add</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/new">Add</a></li>
       </ul>
     </nav>
     <main>
       <div class="add-form">
-        <form action="">
+        <form action="/" method="POST" th:object="${image}">
             <div class="input-container">
               <label for="url"> URL</label>
-              <input type="url" name="url" id="url" required/>
+              <input type="url" th:field="*{url}" id="url" required/>
             </div>
             <div class="input-container">
               <label for="name"> Name</label>
-              <input type="text" name="name" id="name" required/>
+              <input type="text" th:field="*{name}" id="name" required/>
             </div>
             <div class="input-container">
               <label for="description"> Description</label>
-              <textarea name="description" id="description" cols="20" rows="5"></textarea>
+              <textarea th:field="*{description}" id="description" cols="20" rows="5"></textarea>
             </div>
             <button type="submit">Submit</button>
         </form>

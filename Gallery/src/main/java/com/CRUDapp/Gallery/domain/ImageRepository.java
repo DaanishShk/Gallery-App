@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 public interface ImageRepository extends JpaRepository<Image, Long> {
 
-    List<Image> findImageByImgName(String name);
+    List<Image> findImageByName(String name);
 }

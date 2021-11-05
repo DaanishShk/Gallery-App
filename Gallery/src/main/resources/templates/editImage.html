@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/addImage.css">
     <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="shortcut icon"
@@ -13,8 +12,8 @@
       type="image/x-icon"
     />
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/details.css" />
-    <title>Image Details</title>
+    <link rel="stylesheet" href="/css/addImage.css" />
+    <title>Add image</title>
   </head>
   <body>
     <nav>
@@ -24,32 +23,24 @@
         <li><a href="/new">Add</a></li>
       </ul>
     </nav>
-
     <main>
-      <div class="image-container">
-        <img
-          id="image"
-          th:src="${image.url}"
-          th:alt="${image.description}"
-        />
-        <p>Image description: <span th:text="${image.description}">Description here</span></p>
-        <p>
-          Image url:
-          <a
-            th:href="${image.url}" th:text="${image.url}"
-            >image url here</a
-          >
-        </p>
-      </div>
-
-      <div class="navigation-buttons">
-        <form th:action="'/' + ${image.id} + '/edit'" method="GET">
-          <button type="submit">Edit</button>
+      <div class="add-form">
+        <form th:action="'/' + ${image.id} + '/edit'" method="POST">
+            <div class="input-container">
+              <label for="name"> Name</label>
+              <input type="text" name="name" th:value="${image.name}" id="name" readonly/>
+            </div>
+          <div class="input-container">
+            <label for="url"> URL</label>
+            <input type="url" name="url" th:value="${image.url}" id="url" required/>
+          </div>
+            <div class="input-container">
+              <label for="description"> Description</label>
+              <textarea name="description" th:text="${image.description}" id="description" cols="20" rows="5"></textarea>
+            </div>
+            <button type="submit">Submit</button>
         </form>
-        <form th:action="'/delete/' + ${image.id}" method="POST">
-          <button>Delete</button>
-        </form>
-
+        <img th:src="${image.url}" alt="">
       </div>
     </main>
     <footer>
@@ -74,6 +65,5 @@
         >
       </div>
     </footer>
-    <script src="../static/js/script.js"></script>
   </body>
 </html>

@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link
       rel="shortcut icon"
-      href="../static/images/favicon.ico"
+      href="/images/favicon.ico"
       type="image/x-icon"
     />
-    <link rel="icon" href="../static/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <title>Gallery App</title>
   </head>
   <body>
     <nav>
-      <h2><img src="../static/images/gallery.png" alt="" /> Gallery App</h2>
+      <h2><img src="/images/gallery.png" alt="" /> Gallery App</h2>
       <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./addImage.html">Add</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/new">Add</a></li>
       </ul>
     </nav>
     <header>
-      <img src="../static/images/photo-gallery.png" alt="" />
+      <img src="/images/photo-gallery.png" alt="" />
       <h1>Welcome!</h1>
       <p>
         This application allows you to view, add and modify images. <br />Scroll
@@ -31,91 +32,19 @@
     </header>
     <main>
       <div class="search-bar">
-        <form>
+        <form th:action="@{/}" method="get">
             <input type="search" id="mySearch" name="q" />
             <button type="submit">Search</button>
         </form>
       </div>
       <div class="cards">
-        <a href="./details.html" class="image-link">
+        <a th:each="image : ${images}" th:href="@{'/show/' + ${image.id}}" class="image-link">
           <div class="image-card">
             <img
-              src="https://image.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
-              alt=""
+                    th:src="${image.url}"
+                    th:alt="${image.description}"
             />
-            <p>Image Name</p>
-          </div>
-        </a>
-        <a href="./details.html" class="image-link">
-          <div class="image-card">
-            <img
-              src="https://image.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
-              alt=""
-            />
-            <p>Image Name</p>
-          </div>
-        </a>
-        <a href="./details.html" class="image-link">
-          <div class="image-card">
-            <img
-              src="https://image.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
-              alt=""
-            />
-            <p>Image Name</p>
-          </div>
-        </a>
-        <a href="./details.html" class="image-link">
-          <div class="image-card">
-            <img
-              src="https://image.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
-              alt=""
-            />
-            <p>Image Name</p>
-          </div>
-        </a>
-        <a href="./details.html" class="image-link">
-          <div class="image-card">
-            <img
-              src="https://image.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
-              alt=""
-            />
-            <p>Image Name</p>
-          </div>
-        </a>
-        <a href="./details.html" class="image-link">
-          <div class="image-card">
-            <img
-              src="https://image.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
-              alt=""
-            />
-            <p>Image Name</p>
-          </div>
-        </a>
-        <a href="./details.html" class="image-link">
-          <div class="image-card">
-            <img
-              src="https://image.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
-              alt=""
-            />
-            <p>Image Name</p>
-          </div>
-        </a>
-        <a href="./details.html" class="image-link">
-          <div class="image-card">
-            <img
-              src="https://image.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
-              alt=""
-            />
-            <p>Image Name</p>
-          </div>
-        </a>
-        <a href="./details.html" class="image-link">
-          <div class="image-card">
-            <img
-              src="https://image.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"
-              alt=""
-            />
-            <p>Image Name</p>
+            <p th:text="${image.name}">Image Name</p>
           </div>
         </a>
       </div>
@@ -130,7 +59,7 @@
       <div class="personal-info">
         <p>By Mohammad Daanish Shaikh</p>
         <a href="https://github.com/DaanishShk/Gallery-App" target="_blank">
-          <img src="../static/images/GitHub-Mark-120px-plus.png" alt="" />
+          <img src="/images/GitHub-Mark-120px-plus.png" alt="" />
           GitHub</a
         >
       </div>
