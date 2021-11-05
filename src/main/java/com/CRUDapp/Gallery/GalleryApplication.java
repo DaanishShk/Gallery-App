@@ -12,8 +12,11 @@ import org.springframework.context.annotation.Profile;
 @Profile("production")
 public class GalleryApplication implements CommandLineRunner {
 
-	@Autowired
-	private ImageService imageService;
+	private final ImageService imageService;
+
+	public GalleryApplication(ImageService imageService) {
+		this.imageService = imageService;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(GalleryApplication.class, args);
