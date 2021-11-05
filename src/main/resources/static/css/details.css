@@ -1,17 +1,24 @@
 main img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 p {
-  margin: 30px;
+    margin: 30px;
 }
 
 span,
 main a {
-  color: black;
+    color: black;
 }
 
 form {
-  display: inline-block;
+    display: inline-block;
+    width: fit-content;
 }
+
+.details-p, .details-p a {
+    font-size: 20px;
+    font-family: 'Nunito', sans-serif;
+}
+

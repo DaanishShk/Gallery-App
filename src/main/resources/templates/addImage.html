@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="/css/style.css" rel="stylesheet"/>
     <link
-      rel="shortcut icon"
-      href="/images/favicon.ico"
-      type="image/x-icon"
+            href="/images/favicon.ico"
+            rel="shortcut icon"
+            type="image/x-icon"
     />
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/addImage.css" />
+    <link href="/images/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link href="/css/addImage.css" rel="stylesheet"/>
     <title>Add image</title>
-  </head>
-  <body>
-    <nav>
-      <h2><img src="/images/gallery.png" alt="" /> Gallery App</h2>
-      <ul>
+</head>
+<body>
+<nav>
+    <h2><img alt="logo" src="/images/gallery.png"/> Gallery App</h2>
+    <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/new">Add</a></li>
-      </ul>
-    </nav>
-    <main>
-      <div class="add-form">
-        <form action="/new" method="POST" th:object="${image}">
+    </ul>
+</nav>
+<main>
+    <div class="add-form">
+        <form id="add-form" action="/new" method="POST" th:object="${image}">
             <div class="input-container">
-              <label for="name"> Name</label>
-              <input type="text" th:field="*{name}" id="name" required/>
+                <label for="name"> Name</label>
+                <input id="name" required th:field="*{name}" type="text"/>
             </div>
-          <div class="input-container">
-            <label for="url"> URL</label>
-            <input type="url" th:field="*{url}" id="url" onblur="checkImage(this.value)" required/>
-          </div>
             <div class="input-container">
-              <label for="description"> Description</label>
-              <textarea th:field="*{description}" id="description" cols="20" rows="5"></textarea>
+                <label for="url"> URL</label>
+                <input id="url" onblur="checkImage(this.value)" required th:field="*{url}" type="url"/>
             </div>
-            <button type="submit">Submit</button>
+            <div class="input-container">
+                <label for="description"> Description</label>
+                <textarea cols="20" id="description" required rows="5" th:field="*{description}"></textarea>
+            </div>
+            <button id="form-button" onclick="checkBeforeSubmit()" type="button">Submit</button>
+            <p class="pink" id="invalid-image-text" style="display: none">Image link invalid</p>
         </form>
-        <img id="image" src="https://icon-library.com/images/image-placeholder-icon/image-placeholder-icon-16.jpg" alt="">
-      </div>
-    </main>
-    <footer>
-      <div class="personal-info">
+        <img alt="image preview" id="image"
+             src="https://socialistmodernism.com/wp-content/uploads/2017/07/placeholder-image.png?w=640">
+    </div>
+</main>
+<footer>
+    <div class="personal-info">
         <p>By Mohammad Daanish Shaikh</p>
         <a href="https://github.com/DaanishShk/Gallery-App" target="_blank">
-          <img src="/images/GitHub-Mark-120px-plus.png" alt="" />
-          GitHub</a
+            <img alt="github" src="/images/GitHub-Mark-120px-plus.png"/>
+            GitHub</a
         >
-      </div>
-    </footer>
-  <script src="js/imagePopulate.js"></script>
-  </body>
+    </div>
+</footer>
+<script src="js/imagePopulate.js"></script>
+</body>
 </html>

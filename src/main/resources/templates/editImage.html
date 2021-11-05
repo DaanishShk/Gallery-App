@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="/css/style.css" rel="stylesheet"/>
     <link
-      rel="shortcut icon"
-      href="/images/favicon.ico"
-      type="image/x-icon"
+            href="/images/favicon.ico"
+            rel="shortcut icon"
+            type="image/x-icon"
     />
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/css/addImage.css" />
+    <link href="/images/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link href="/css/addImage.css" rel="stylesheet"/>
     <title>Add image</title>
-  </head>
-  <body>
-    <nav>
-      <h2><img src="/images/gallery.png" alt="" /> Gallery App</h2>
-      <ul>
+</head>
+<body>
+<nav>
+    <h2><img alt="logo" src="/images/gallery.png"/> Gallery App</h2>
+    <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/new">Add</a></li>
-      </ul>
-    </nav>
-    <main>
-      <div class="add-form">
-        <form th:action="'/' + ${image.id} + '/edit'" method="POST">
+    </ul>
+</nav>
+<main>
+    <div class="add-form">
+        <form method="POST" th:action="'/' + ${image.id} + '/edit'">
             <div class="input-container">
-              <label for="name"> Name</label>
-              <input type="text" name="name" th:value="${image.name}" id="name" readonly/>
+                <label for="name"> Name</label>
+                <input id="name" name="name" readonly th:value="${image.name}" type="text"/>
             </div>
-          <div class="input-container">
-            <label for="url"> URL</label>
-            <input type="url" name="url" th:value="${image.url}" id="url" required/>
-          </div>
             <div class="input-container">
-              <label for="description"> Description</label>
-              <textarea name="description" th:text="${image.description}" id="description" cols="20" rows="5"></textarea>
+                <label for="url"> URL</label>
+                <input id="url" name="url" required th:value="${image.url}" type="url"/>
+            </div>
+            <div class="input-container">
+                <label for="description"> Description</label>
+                <textarea cols="20" id="description" name="description" rows="5"
+                          th:text="${image.description}"></textarea>
             </div>
             <button type="submit">Submit</button>
         </form>
-        <img th:src="${image.url}" alt="">
-      </div>
-    </main>
-    <footer>
-      <div class="personal-info">
+        <img th:alt="${image.description}" th:src="${image.url}" id="image">
+    </div>
+</main>
+<footer>
+    <div class="personal-info">
         <p>By Mohammad Daanish Shaikh</p>
         <a href="https://github.com/DaanishShk/Gallery-App" target="_blank">
-          <img src="../static/images/GitHub-Mark-120px-plus.png" alt="" />
-          GitHub</a
+            <img alt="github" src="/images/GitHub-Mark-120px-plus.png"/>
+            GitHub</a
         >
-      </div>
-    </footer>
-  </body>
+    </div>
+</footer>
+<script src="js/imagePopulate.js"></script>
+</body>
 </html>

@@ -1,20 +1,18 @@
 package com.CRUDapp.Gallery.controller;
 
 import com.CRUDapp.Gallery.services.ImageService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class MiscController {
+public class SearchController {
 
     private final ImageService imageService;
 
 
-    public MiscController(ImageService imageService) {
+    public SearchController(ImageService imageService) {
         this.imageService = imageService;
     }
 

@@ -1,70 +1,73 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="/css/style.css" rel="stylesheet"/>
     <link
-      rel="shortcut icon"
-      href="/images/favicon.ico"
-      type="image/x-icon"
+            href="/images/favicon.ico"
+            rel="shortcut icon"
+            type="image/x-icon"
     />
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link href="/images/favicon.ico" rel="icon" type="image/x-icon"/>
     <title>Gallery App</title>
-  </head>
-  <body>
-    <nav>
-      <h2><img src="/images/gallery.png" alt="" /> Gallery App</h2>
-      <ul>
+</head>
+<body>
+<nav>
+    <h2><img alt="logo" src="/images/gallery.png"/> Gallery App</h2>
+    <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/new">Add</a></li>
-      </ul>
-    </nav>
-    <header>
-      <img src="/images/photo-gallery.png" alt="" />
-      <h1>Welcome!</h1>
-      <p>
-        This application allows you to view, add and modify images. <br />Scroll
+    </ul>
+</nav>
+<header>
+    <img alt="logo" src="/images/photo-gallery.png"/>
+    <h1>Welcome!</h1>
+    <p>
+        This application allows you to view, add and modify images. <br/>Scroll
         down to start exploring
-      </p>
-      <span id="marker"></span>
-    </header>
-    <main id="main">
-      <div class="search-bar">
-        <form th:action="@{/search}" method="get">
-            <input type="search" id="search" name="query" />
+    </p>
+    <span id="marker"></span>
+</header>
+<main id="main">
+    <div class="search-bar">
+        <form method="get" th:action="@{/search#marker}">
+            <input id="search" name="query" type="search"/>
             <button type="submit">Search</button>
         </form>
-      </div>
-      <div class="cards">
-        <a th:each="image : ${images}" th:href="@{'/show/' + ${image.id}}" class="image-link">
-          <div class="image-card">
-            <img
-                    th:src="${image.url}"
-                    th:alt="${image.description}"
-            />
-            <p th:text="${image.name}">Image Name</p>
-          </div>
+    </div>
+    <div th:if="${#lists.isEmpty(images)}">
+        <h3>No image found</h3>
+    </div>
+    <div class="cards">
+        <a class="image-link" th:each="image : ${images}" th:href="@{'/show/' + ${image.id}}">
+            <div class="image-card">
+                <img
+                        th:alt="${image.description}"
+                        th:src="${image.url}"
+                />
+                <p th:text="${image.name}">Image Name</p>
+            </div>
         </a>
-      </div>
+    </div>
 
-      <div id="navigation-buttons" class="navigation-buttons">
-        <button id="prev" th:value="${pageNo - 1}" onclick="onClickNavigation(this.value)">Prev &lt;</button>
-        <button id="next" th:value="${pageNo + 1}" onclick="onClickNavigation(this.value)">&gt; Next</button>
-        <p>Page <span th:text="${pageNo + 1}">Page no.</span></p>
-      </div>
-    </main>
-    <footer>
-      <div id="navigation" class="personal-info">
+    <div class="navigation-buttons" id="navigation-buttons">
+        <button id="prev" onclick="onClickNavigation(this.value)" th:value="${pageNo - 1}">Prev &lt;</button>
+        <button id="next" onclick="onClickNavigation(this.value)" th:value="${pageNo + 1}">&gt; Next</button>
+        <p class="pink" id="page-number">Page <span th:text="${pageNo + 1}">Page no.</span></p>
+    </div>
+</main>
+<footer>
+    <div class="personal-info" id="navigation">
         <p>By Mohammad Daanish Shaikh</p>
         <a href="https://github.com/DaanishShk/Gallery-App" target="_blank">
-          <img src="/images/GitHub-Mark-120px-plus.png" alt="" />
-          GitHub</a
+            <img alt="github" src="/images/GitHub-Mark-120px-plus.png"/>
+            GitHub</a
         >
-      </div>
-    </footer>
-    <script src="/js/script.js"></script>
-  </body>
+    </div>
+</footer>
+<script src="/js/script.js"></script>
+</body>
 </html>

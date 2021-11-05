@@ -1,5 +1,4 @@
 
-
 main img {
     display: inline-block;
     width: max-content;
@@ -11,7 +10,7 @@ main img {
     display: flex;
     align-items: center;
     overflow: hidden;
-} 
+}
 
 form {
     font-family: cursive;
@@ -33,13 +32,16 @@ form {
     margin: 25px 0;
 }
 
+input, textarea {
+    width: 60%;
+}
+
 input {
     font-size: 13px;
 }
 
 textarea {
     resize: none;
-    width: 167px;
     border-radius: 3px;
     border: none;
 }

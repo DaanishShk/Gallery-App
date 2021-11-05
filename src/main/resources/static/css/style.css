@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 /* --------------
     General fixes
    -------------- */
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 /* --------------
@@ -21,43 +21,50 @@ body {
 
 
 body {
-  --link-color: rgb(88, 40, 0);
+    --link-color: rgb(88, 40, 0);
 }
 
 h2 {
-  color:rgb(102, 47, 2);
-  font-family: 'Architects Daughter', cursive;
+    color: rgb(102, 47, 2);
+    font-family: 'Architects Daughter', cursive;
 }
 
 h1 {
-    font-family:'Indie Flower', cursive;
+    font-family: 'Indie Flower', cursive;
     font-size: 100px;
 }
 
 
 li {
-  list-style: none;
+    list-style: none;
 }
 
 a {
-  text-decoration: none;
-  color: var(--link-color);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: 20px;
+    text-decoration: none;
+    color: var(--link-color);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 20px;
 }
 
 p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: tomato;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: tomato;
 }
 
-header p {  
-    font-family:'Indie Flower', cursive;
+header p {
+    font-family: 'Indie Flower', cursive;
     font-size: 30px;
     color: rgb(18, 80, 109);
 }
 
-.image-link p{
+h3 {
+    text-align: center;
+    font-family: 'Architects Daughter';
+    font-size: 30px;
+    line-height: 100px;
+}
+
+.image-link p {
     font-family: 'Architects Daughter', cursive;
     text-align: center;
 }
@@ -70,7 +77,7 @@ button, .navigation-buttons p {
 footer p {
     margin: 0;
     padding: 10px;
-    color:rgb(2, 0, 0);
+    color: rgb(2, 0, 0);
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     display: inline-block;
     padding-right: 20px;
@@ -84,9 +91,19 @@ footer a {
 .flaticon {
     padding-left: 10px;
 }
-.flaticon a{
+
+.flaticon a {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
+}
+
+#page-number {
+    font-size: 25px;
+}
+
+.pink {
+    color: #ff9a8d;
+    font-family: 'Nunito', sans-serif !important;
 }
 
 /* --------------
@@ -103,13 +120,13 @@ body {
 } */
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60px;
-  position: sticky;
-  z-index: 10;
-  top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    position: sticky;
+    z-index: 10;
+    top: 0;
 }
 
 nav img {
@@ -120,21 +137,21 @@ nav img {
 }
 
 nav h2 {
-  display: inline-block;
-  position: relative;
-  top: -5px;
-  margin: 0;
-  padding: 0 20px;
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    margin: 0;
+    padding: 0 20px;
 }
 
 ul {
-  display: flex;
-  justify-content: flex-end;
-  width: 50%;
-  height: 100%;
-  margin: 0;
-  margin-right: 3%;
-  padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    margin-right: 3%;
+    padding: 0;
 }
 
 li a {
@@ -154,8 +171,8 @@ header {
 }
 
 header h1 {
-  margin: 0;
-  padding-bottom: 0;
+    margin: 0;
+    padding-bottom: 0;
 }
 
 header p {
@@ -164,29 +181,30 @@ header p {
 }
 
 .search-bar {
-  padding-top: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    padding-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .cards {
-  display: grid;
-  grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 .image-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto;
-  width: 350px;
-  overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 350px;
+    overflow: hidden;
 }
 
 img,
 p {
-  display: block;
+    display: block;
 }
 
 header img {
@@ -194,9 +212,9 @@ header img {
 }
 
 main img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 .navigation-buttons {
@@ -209,9 +227,9 @@ footer {
     height: max-content;
 }
 
-.personal-info{
+.personal-info {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     padding: 20px 50px;
 }
@@ -225,7 +243,7 @@ footer {
 .personal-info img {
     height: 60px;
     display: inline;
-    
+
 }
 
 @media only screen and (min-width: 750px) {
@@ -241,7 +259,7 @@ footer {
 }
 
 /* ----------------
-     temp colors
+     colors
    ---------------- */
 
 html {
@@ -249,24 +267,24 @@ html {
 }
 
 nav {
-  background-color: #aed6dc;
+    background-color: #aed6dc;
 }
 
 header {
-  background-image: linear-gradient(35deg, #ff9a8d,rgba(109, 39, 39, 0.274));
+    background-image: linear-gradient(35deg, #ff9a8d, rgba(109, 39, 39, 0.274));
 }
 
 main {
-  background-color: #4a536bc2;
+    background-color: #4a536bc2;
 }
 
 footer {
-  background-color: #ff9a8d;
+    background-color: #ff9a8d;
 
 }
 
 .image-link {
-   background-color: rgb(241, 227, 227);
+    background-color: rgb(241, 227, 227);
 }
 
 /* ----------------
@@ -285,6 +303,7 @@ nav a:hover {
 .image-link {
     border: 4px solid rgba(0, 0, 0, 0.671);
     border-radius: 5px;
+    box-shadow: 0 0 17px 2px #00000078;
 }
 
 .image-link:hover {
@@ -297,7 +316,7 @@ nav a:hover {
 }
 
 button {
-    background-color: rgba(207, 128, 120, 0.897);
+    background-color: #ff9a8d;
     border: none;
     padding: 10px 15px;
     border-radius: 3px;
@@ -305,7 +324,7 @@ button {
 
 button:hover {
     transition-duration: 0.3s;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     cursor: pointer;
 }
 
@@ -316,7 +335,7 @@ button:hover {
 }
 
 form button {
-  padding: 3px 10px;
+    padding: 3px 10px;
 }
 
 input {
@@ -324,4 +343,9 @@ input {
     font-size: 20px;
     border: hidden;
     border-radius: 3px;
+}
+
+.personal-info a:hover {
+    transition-duration: 0.3s;
+    transform: translateY(-3px);
 }
