@@ -29,11 +29,12 @@
         This application allows you to view, add and modify images. <br />Scroll
         down to start exploring
       </p>
+      <span id="marker"></span>
     </header>
-    <main>
+    <main id="main">
       <div class="search-bar">
-        <form th:action="@{/}" method="get">
-            <input type="search" id="mySearch" name="q" />
+        <form th:action="@{/search}" method="get">
+            <input type="search" id="search" name="query" />
             <button type="submit">Search</button>
         </form>
       </div>
@@ -49,14 +50,14 @@
         </a>
       </div>
 
-      <div class="navigation-buttons">
-        <button>Prev &lt;</button>
-        <button>&gt; Next</button>
-        <p>Page 1</p>
+      <div id="navigation-buttons" class="navigation-buttons">
+        <button id="prev" th:value="${pageNo - 1}" onclick="onClickNavigation(this.value)">Prev &lt;</button>
+        <button id="next" th:value="${pageNo + 1}" onclick="onClickNavigation(this.value)">&gt; Next</button>
+        <p>Page <span th:text="${pageNo + 1}">Page no.</span></p>
       </div>
     </main>
     <footer>
-      <div class="personal-info">
+      <div id="navigation" class="personal-info">
         <p>By Mohammad Daanish Shaikh</p>
         <a href="https://github.com/DaanishShk/Gallery-App" target="_blank">
           <img src="/images/GitHub-Mark-120px-plus.png" alt="" />
@@ -77,5 +78,6 @@
         >
       </div>
     </footer>
+    <script src="/js/script.js"></script>
   </body>
 </html>

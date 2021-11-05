@@ -2,8 +2,12 @@ package com.CRUDapp.Gallery.services;
 
 import com.CRUDapp.Gallery.domain.Image;
 import com.CRUDapp.Gallery.domain.ImageRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 
@@ -19,6 +23,12 @@ public class ImageService {
 
     public List<Image> getAllImages() {
         return imageRepository.findAll();
+    }
+
+    public List<Image> getImagesByPage(Integer pageNo) {
+        Pageable paging = PageRequest.of(pageNo, 9, Sort.by("id"));
+        Page<Image> pagedResult= imageRepository.findAll(paging);
+        return pagedResult.getContent();
     }
 
     public List<Image> getImagesByName(String name) {
@@ -42,5 +52,13 @@ public class ImageService {
 
     public void deleteImage(Long id){
         imageRepository.deleteById(id);
+    }
+
+
+
+    public List<Image> searchImages(String query) {
+        Pageable paging = PageRequest.of(0, 9, Sort.by("id"));
+        Page<Image> pagedResult= imageRepository.findImageByNameContainingIgnoreCase(query,paging);
+        return pagedResult.getContent();
     }
 }

@@ -1,11 +1,11 @@
 
-/* 
+
 main img {
     display: inline-block;
     width: max-content;
     height: max-content;
-    object-fit: none;
-} */
+    object-fit: contain;
+}
 
 .add-form {
     display: flex;
